@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect, KeyboardEvent } from 'react';
 import '../styles.css';
 
@@ -12,7 +13,7 @@ const BottomSheet: React.FC = () => {
   const animateTo = (target: number) => {
     if (!sheetRef.current) return;
     sheetRef.current.style.transition = 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
-    sheetRef.current.style.transform = translateY(${100 - target}%);
+    sheetRef.current.style.transform = `translateY(${100 - target}%)`;
     setPosition(target);
   };
 
@@ -30,7 +31,7 @@ const BottomSheet: React.FC = () => {
 
     if (newPosition >= 0 && newPosition <= 100) {
       sheetRef.current.style.transition = 'none';
-      sheetRef.current.style.transform = translateY(${100 - newPosition}%);
+      sheetRef.current.style.transform = `translateY(${100 - newPosition}%)`;
     }
   };
 
