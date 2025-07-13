@@ -1,0 +1,86 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  overflow-x: hidden;
+}
+
+.sheet-buttons {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.bottom-sheet {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out;
+  touch-action: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.bottom-sheet .handle {
+  width: 48px;
+  height: 6px;
+  background: #ccc;
+  border-radius: 10px;
+  margin: 12px auto 8px auto;
+}
+
+.bottom-sheet .content {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .sheet-buttons {
+    top: auto;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    justify-content: center;
+  }
+
+  button {
+    width: 100px;
+  }
+
+  .bottom-sheet {
+    border-radius: 20px 20px 0 0;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
