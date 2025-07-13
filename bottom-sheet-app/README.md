@@ -39,14 +39,14 @@ Install Dependencies
 
 ### 2.Install Dependencies
 npm install
-# or
+or
 yarn install
 
 
 ### 3. Run the App
 
 npm start
-# or
+or
 yarn start
 
 The app will start on http://localhost:3000
